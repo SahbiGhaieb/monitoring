@@ -25,4 +25,18 @@ La variable MEMORY reçoit le resultat aprés le filtrage de la commande
 
 La variable DSIK reçoit le pourçentage d'espace disque utilisé sur la partition ou on a monté notre repértoir racine.
 
+**Stockage des données:**
 
+J'ai choisi de stocker les données sur un fichier texte `log.txt`, ce dernier peut étre par la suite insérer sur un fichier calculateur comme Microsoft excel pour faire des analyse, ou encore consulté par un administrateur systéme.
+
+**Periodicité de recupération des données:**
+
+Comme demandé de supérviser le systeme j'ai assuré que le script tourne toute les 5minutes en utilisant `slee 300`.
+
+Malhereusement je vois que 5 minutes est trop car sur une machine ou serveur qu'on utilise fréquament on peut avoir des piques brusques et on risque des crash du systeme.
+
+**Améliorations envisagés:**
+
+J'aller ajouter un systeme de notification par email mais cela necessite la configuration d'un serveur mail comme postfix...
+
+Un email sera envoyer au mail de l'administrateur, quand la charge du CPU est à 80% par exemple.
