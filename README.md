@@ -7,18 +7,19 @@ Personellement je travaille sur mon environement local, soit une ubuntu 16.04.
 
 **Choix des données à monitorer:**
 
-On commence par le CPU:
+* On commence par le CPU:
 `CPU=$(top -bn1 | grep load | awk '{printf "%.2f%%\t\t\n", $(NF-2)}')`
 
 La variable CPU reçoit la charge du CPU en filtrant le resultat de la commande top -bn1, on extracte la charge moyenne du cpu pendant la derniére minute. 
-Memoire vive utilisé:
+
+* Memoire vive utilisé:
 
 `MEMORY=$(free -m | awk 'NR==2{printf "%.2f%%\t\t", $3*100/$2 }')`
 
 La variable MEMORY reçoit le resultat aprés le filtrage de la commande
 `free -m` qui renvoit des statistiques sur la memoire(total, utilisé, disponible...).
 
-Espace disque:
+* Espace disque:
 
 `DISK=$(df -h | awk '$NF=="/"{printf "%s\t\t", $5}')`
 
