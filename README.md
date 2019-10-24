@@ -5,6 +5,13 @@ Ce projet contien un script bash qui quant executé renvoi en pourcentage le CPU
 Mon choix n'étais pas arbitraire, j'ai choisi bash script car sur n'importe quelle machine linux (ubuntu, centos...), on peux l'executer et le resultat est presque le meme.
 Personellement je travaille sur mon environement local, soit une ubuntu 16.04.
 
+**Utilisation:**
+
+Pour éxecuter ce projet faite ces petites étapes trés faciles:
+1. Cloner ce repo.
+2. donner le droit d'execution au fichier monit.sh en utilisant la commande `chmod +x monit.sh`.
+3. éxecuter le script en utilisant `./monit.sh`.
+
 **Choix des données à monitorer:**
 
 * On commence par le CPU:
