@@ -41,13 +41,15 @@ J'ai choisi de stocker les données sur un fichier texte `log.txt`, ce dernier p
 
 Comme demandé de superviser le système j'ai assuré que le script tourne toutes les 5 minutes en utilisant `sleep 5m`.
 
+On peut aussi utiliser le crontab pour assurer une periodicité de notre choix pour éxecuter notre script.
+
 Malheureusement je vois que 5 minutes sont trop car sur une machine ou serveur qu'on utilise fréquemment on peut avoir des piques brusques et on risque des crashs du système.
 
 **Améliorations envisagés:**
 
-J'aller ajouter un système de notification par email mais cela necessite la configuration d'un serveur mail comme postfix...
+J'allais ajouter un système de notification par email mais cela necessite la configuration d'un serveur mail comme postfix...
 
-Un email sera envoyé au mail de l'administrateur, quand la charge du CPU est à 70% par exemple.
+Un email sera envoyé au mail à l'administrateur, quand la charge du CPU est à 70% par exemple.
 
 **Alerting:**
 
@@ -59,6 +61,8 @@ Comme n'importe quelle machine qui fonctionne et exécute différents programmes
 
 **Amelioration Envisagés**
 
+Pour diminuer l'intervention humaine et automatiser le lancement de notre script à chaque demarage du systéme, on peut le mettre en tant que service et l'ajouter au demarrage(`service nom_du_service enable`).
+
 Chaque programme peut toujours être évolué et amélioré, surtout notre petit script.
 
 Évidemment nous pouvons non seulement récupérer les taux CPU/MEMOIRE/DISK utilisé mais aussi on peut extraire les taux d'utilisation du réseau(network), température du CPU, on peut superviser la totalité de nos services, serveur web, mail, applications.... 
@@ -69,4 +73,6 @@ Personnellement je préfére stocker les logs dans des fichiers, mais il existe 
 
 **Recommendation d'outil de monitoring:**
 
-Personnellement je n'ai pas une grande expérience en ce qui concerne les outils de monitoring. J'ai testé quelques outils auparavant, je peux citer **Nagios** un bon outil robuste que j'ai utilisé pendant mon apprentissage. J'ai fait des recherches concernant ces outils je peux ainsi que j'ai aussi aimé **Netdata** qui est un outil de monitoring en temps réel, il a des interfaces fascinantes et simples, j'aurais aimé le tester et donner mon avis personnel sur le sujet.
+Personnellement je n'ai pas une grande expérience en ce qui concerne les outils de monitoring. J'ai testé quelques outils auparavant, je peux citer **Nagios** un bon outil robuste et gratuit que j'ai utilisé pendant mon apprentissage ainsi que **Zabbix** qui est open-source. 
+
+J'ai fait des recherches concernant ces outils je peux ainsi que j'ai aussi aimé **Netdata** qui est un outil de monitoring en temps réel, il a des interfaces fascinantes et simples, j'aurais aimé le tester et donner mon avis personnel sur le sujet.
