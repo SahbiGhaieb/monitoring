@@ -2,6 +2,7 @@
 #tester si le fichier log est deja crée
 if [ ! -f $HOME/Documents/testSysteme/log.txt ] 
 then
+    mkdir -p $HOME/Documents/testSysteme
     touch log.txt
 fi
 #tester si le fichier est plain ou vide
