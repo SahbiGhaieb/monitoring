@@ -47,4 +47,22 @@ Malhereusement je vois que 5 minutes est trop car sur une machine ou serveur qu'
 
 J'aller ajouter un systeme de notification par email mais cela necessite la configuration d'un serveur mail comme postfix...
 
-Un email sera envoyer au mail de l'administrateur, quand la charge du CPU est à 80% par exemple.
+Un email sera envoyer au mail de l'administrateur, quand la charge du CPU est à 70% par exemple.
+
+**Alerting:**
+
+Comme j'ai mentionnée en haut si on vas intégrer une solution d'alerting par email par exemple. Dans ce cas on peux fixer des variables pour les seuils (THRESHOLD), **CPU_THRESHOLD=80%**, **MEMORY_THRESHOLD=80%**, **DISK_THRESHOLD=90%**, **NETWORK_THRESHOLD**... 
+Apres on teste ces valeurs avec les valeur qu'on recupére chaque 5 minutes dans notre cas, si THRESHOLD<=valeurs on envoi une alerte.
+Une autre méthode pour faire une alerte d'état critique serais d'utiliser la commande `notify-send`, cette commande vas envoyer des message au niveau du bureau(desktop), mais ce n'est pas une méthode efficace pour les serveurs. 
+
+Comme n'importe quelle machine qui fonctionne et execute differents programmes, si le CPU, Memoire, Disk... sont satturés, sa peut causer des latences (LAG), voir meme causer le crash totale du systeme.
+
+**Amelioration Envisagés**
+
+Chaque programme peux toujours étre évolué et amélioré, surtout notre petit script.
+
+Evidemment nous pouvons non seulement recupérer les taux CPU/MEMOIRE/DISK utilisé mais aussi on peux extraire les taux d'utilisation du reseau(network), température du CPU, on peux supérviser la totalité de nos services, serveur web, mail, applications... 
+
+**Amelioration du stockage**
+
+Personellement je préfére stocker les logs dans des fichiers, mais il existe aussi d'autre possibilités, on peux stocker ces log dans des bases de données, il existe plusieurs bases de données et de preference utiliser des bases de données NoSQL.
