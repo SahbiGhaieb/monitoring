@@ -1,5 +1,5 @@
 # monitoring
-Ce projet contien un script bash qui quant executé renvoi en pourcentage le CPU load, Memoire et espace disque utilisé.
+Ce projet contien un script qui quant executé renvoi en pourcentage le CPU load, Memoire et espace disque utilisé.
 **Technologies:**
 
 Mon choix n'étais pas arbitraire, j'ai choisi bash script car sur n'importe quelle machine linux (ubuntu, centos...), on peux l'executer et le resultat est presque le meme.
@@ -31,7 +31,7 @@ La variable **MEMORY** reçoit le resultat aprés le filtrage de la commande
 
 `DISK=$(df -h | awk '$NF=="/"{printf "%s\t\t", $5}')`
 
-La variable **DSIK** reçoit le pourçentage d'espace disque utilisé sur la partition ou on a monté notre repértoir racine.
+La variable **DISK** reçoit le pourçentage d'espace disque utilisé sur la partition ou on a monté notre repértoir racine.
 
 **Stockage des données:**
 
@@ -39,7 +39,7 @@ J'ai choisi de stocker les données sur un fichier texte `log.txt`, ce dernier p
 
 **Periodicité de recupération des données:**
 
-Comme demandé de supérviser le systeme j'ai assuré que le script tourne toute les 5minutes en utilisant `slee 300`.
+Comme demandé de supérviser le systeme j'ai assuré que le script tourne toute les 5minutes en utilisant `sleep 5m`.
 
 Malhereusement je vois que 5 minutes est trop car sur une machine ou serveur qu'on utilise fréquament on peut avoir des piques brusques et on risque des crash du systeme.
 
@@ -66,3 +66,7 @@ Evidemment nous pouvons non seulement recupérer les taux CPU/MEMOIRE/DISK utili
 **Amelioration du stockage**
 
 Personellement je préfére stocker les logs dans des fichiers, mais il existe aussi d'autre possibilités, on peux stocker ces log dans des bases de données, il existe plusieurs bases de données et de preference utiliser des bases de données NoSQL.
+
+**Recommendation d'outil de monitoring:**
+
+Personnellement je n'ai pas une grande expérience en ce qui concerne les outils de monitoring. J'ai testé quelques outils auparavant, je peux citer **Nagios** un bon outil robuste que j'ai utilisé pendant mon apprentissage. J'ai faits des recherches concernant ces outils je peux ainsi que j'ai aussi aimé **Netdata** qui est un outil de monitoring en temps réel, il a des interfaces fascinantes et simples, j'aurais aimé le tester et donner mon avis personnel sur le sujet.
